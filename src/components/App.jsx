@@ -48,7 +48,7 @@ export const App = () => {
             'Opps, there are no pictures according to your request... '
           );
         }
-        setImages([...images, ...allImages.hits]);
+        setImages(prevImg => [...prevImg, ...allImages.hits]);
         setLoadMore(page < Math.ceil(allImages.totalHits / 12));
       } catch (error) {
         setError(true);
